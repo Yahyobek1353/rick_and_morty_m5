@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#A1A1A1"
+    tools:context=".ui.fragment.character.CharactersFragment">
+
+   <androidx.appcompat.widget.SearchView
+       android:background="@drawable/bg_search_view"
+       android:layout_marginHorizontal="12dp"
+       android:layout_marginTop="10dp"
+       android:layout_width="0dp"
+       android:layout_height="wrap_content"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintEnd_toStartOf="@id/btn_filter"
+       app:queryHint="Search"
+       android:id="@+id/search_view"/>
+
+   <ImageButton
+       android:id="@+id/btn_filter"
+       android:background="@drawable/bg_search_view"
+       android:layout_marginEnd="5dp"
+       android:layout_width="50dp"
+       android:layout_height="50dp"
+       app:layout_constraintTop_toTopOf="@id/search_view"
+       app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintBottom_toBottomOf="@id/search_view"
+      android:src="@drawable/filter"/>
+
+   <androidx.recyclerview.widget.RecyclerView
+       android:layout_width="match_parent"
+       android:layout_height="0dp"
+      app:layout_constraintTop_toBottomOf="@id/search_view"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+      tools:listitem="@layout/item_chaharters"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
